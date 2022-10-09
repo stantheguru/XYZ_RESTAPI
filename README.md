@@ -39,7 +39,7 @@ It has the following APIS;
 I created the project with Visual Studio 2022
 Follow these steps to use the APIS;
 1. Install Visual Studio into your PC
-2. Install Mysql community server and create database xyz
+2. Install Mysql community server and create database xyz using the xyz.sql file
 3. git clone the project into your PC.
 4. Click the XYZ.sln file to launch the project
 5. Update database settings in the appsettings.json file and DBContext.cs file
