@@ -44,8 +44,8 @@ namespace XYZ.Controllers
             }
         }
         //Select a specific  notification
-        [HttpGet("GetNotificationById")]
-        public async Task<ActionResult<DBNotification>> GetNotificationById(int Id)
+        [HttpGet("GetNotificationByNotificationId")]
+        public async Task<ActionResult<DBNotification>> GetNotificationByNotificationId(int notification_id)
         {
             DBNotification Notification = await DBContext.Notifications.Select(
                       notification => new DBNotification
@@ -56,7 +56,7 @@ namespace XYZ.Controllers
                           NotificationDate = notification.NotificationDate,
                           Status = notification.Status
                       })
-                 .FirstOrDefaultAsync(notification => notification.NotificationID == Id);
+                 .FirstOrDefaultAsync(notification => notification.NotificationID == notification_id);
 
             if (Notification == null)
             {

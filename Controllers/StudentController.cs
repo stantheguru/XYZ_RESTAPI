@@ -43,8 +43,8 @@ namespace XYZ.Controllers
         }
 
         //select a specific student
-        [HttpGet("GetStudentById")]
-        public async Task<ActionResult<DBStudent>> GetStudentById(int Id)
+        [HttpGet("GetStudentByStudentId")]
+        public async Task<ActionResult<DBStudent>> GetStudentByStudentId(int student_id)
         {
            DBStudent Student = await DBContext.Students.Select(
                     student => new DBStudent
@@ -56,7 +56,7 @@ namespace XYZ.Controllers
                         Department = student.Department,
                         Course = student.Course
                     })
-                .FirstOrDefaultAsync(student => student.StudentID == Id);
+                .FirstOrDefaultAsync(student => student.StudentID == student_id);
 
             if (Student == null)
             {

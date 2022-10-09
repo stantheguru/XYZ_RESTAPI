@@ -50,9 +50,66 @@ namespace XYZ.Controllers
                 return List;
             }
         }
+
+        //List all payments based on payment method
+        [HttpGet("GetPaymentsByPaymentMethod")]
+        public async Task<ActionResult<List<DBFamilyBank_Payment>>> GetPaymentsByPaymentMethod(string payment_method)
+        {
+            var List = await DBContext.FamilyBank_Payments.Select(
+                payment => new DBFamilyBank_Payment
+                {
+                    PaymentID = payment.PaymentID,
+                    StudentID = payment.StudentID,
+                    Amount = payment.Amount,
+                    PaymentDate = payment.PaymentDate,
+                    PaymentMethod = payment.PaymentMethod,
+                    BankChannel = payment.BankChannel,
+                    NotificationChannel = payment.NotificationChannel
+                }
+            ).Where(payment => payment.PaymentMethod == payment_method)
+            .ToListAsync();
+
+            if (List.Count < 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return List;
+            }
+        }
+
+        //List all payments based on payment method
+        [HttpGet("GetPaymentsByBankChannel")]
+        public async Task<ActionResult<List<DBFamilyBank_Payment>>> GetPaymentsByBankChannel(string bank_channel)
+        {
+            var List = await DBContext.FamilyBank_Payments.Select(
+                payment => new DBFamilyBank_Payment
+                {
+                    PaymentID = payment.PaymentID,
+                    StudentID = payment.StudentID,
+                    Amount = payment.Amount,
+                    PaymentDate = payment.PaymentDate,
+                    PaymentMethod = payment.PaymentMethod,
+                    BankChannel = payment.BankChannel,
+                    NotificationChannel = payment.NotificationChannel
+                }
+            ).Where(payment => payment.BankChannel == bank_channel)
+            .ToListAsync();
+
+            if (List.Count < 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return List;
+            }
+        }
+
         //Select a specific payment
-        [HttpGet("GetPaymentById")]
-        public async Task<ActionResult<DBFamilyBank_Payment>> GetPaymentById(int Id)
+        [HttpGet("GetPaymentByPaymentId")]
+        public async Task<ActionResult<DBFamilyBank_Payment>> GetPaymentByPaymentId(int payment_id)
         {
             DBFamilyBank_Payment FamilyBank_Payment = await DBContext.FamilyBank_Payments.Select(
                       payment => new DBFamilyBank_Payment
@@ -65,7 +122,7 @@ namespace XYZ.Controllers
                           BankChannel = payment.BankChannel,
                           NotificationChannel = payment.NotificationChannel
                       })
-                 .FirstOrDefaultAsync(payment => payment.PaymentID == Id);
+                 .FirstOrDefaultAsync(payment => payment.PaymentID == payment_id);
 
             if (FamilyBank_Payment == null)
             {
