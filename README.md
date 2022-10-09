@@ -35,3 +35,14 @@ It has the following APIS;
 3. PUT API for updating a notification record
 4. DELETE API for deleting a notification record
 
+# Using XYZ_REST API
+I created the project with Visual Studio 2022
+Follow these steps to use the APIS;
+1. Install Visual Studio into your PC
+2. Install Mysql community server and create database xyz
+3. git clone the project into your PC.
+4. Click the XYZ.sln file to launch the project
+5. Update database settings in the appsettings.json file and DBContext.cs file
+6. Select the Start Debugging tool to run the project
+7. The Swagger UI will lauch on your web browser and you can test all the APIS
+
