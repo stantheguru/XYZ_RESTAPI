@@ -46,3 +46,12 @@ Follow these steps to use the APIS;
 6. Select the Start Debugging tool to run the project
 7. The Swagger UI will lauch on your web browser and you can test all the APIS
 
+
+
+
+![Screenshot (2)](https://user-images.githubusercontent.com/40181769/194757553-03545899-6c9c-40e6-987c-a49aa8665b9d.png)
+![Screenshot (3)](https://user-images.githubusercontent.com/40181769/194757562-829174ec-ff31-4cd7-9da9-4414311e85db.png)
+![Screenshot (4)](https://user-images.githubusercontent.com/40181769/194757564-83474c5f-1a79-489c-936e-c2d66889f2be.png)
+![Screenshot (5)](https://user-images.githubusercontent.com/40181769/194757565-d9af0c15-4e82-4cee-b30e-6b2637a39c81.png)
+![Screenshot (6)](https://user-images.githubusercontent.com/40181769/194757568-d2e155f4-2075-41ac-a7e8-25e2fbf1e1e6.png)
+
